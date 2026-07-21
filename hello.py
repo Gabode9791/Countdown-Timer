@@ -1,31 +1,11 @@
-principle = 0
-rate = 0
-time = 0
+import time
 
-while True:
-    principle = float(input("Enter the principle amount: "))
-    if principle < 0:
-        print("Principle can't be less than zero")
-    else:
-        break
+my_time = int(input("Enter the time in seconds: "))
 
-while True:
-    rate = float(input("Enter the interest rate: "))
-    if rate <  0:
-        print("Interest rate can't be less than zero")
-    else:
-        break
+for x in range(my_time, 0, -1):
+    seconds = x % 60
+    minutes = int(x / 60) % 60
+    print(f"00:{minutes:02}:{seconds:02}")
+    time.sleep(1)
 
-while True:
-    time = int(input("Enter the time in years: "))
-    if time < 0:
-        print("Time can't be less than zero")
-    else:
-        break
-
-total = principle * pow((1 + rate / 100), time)
-print(f"Balance after {time} year/s: £{total:.2f}")
-          
-
-          
-
+print("TIME'S UP!")
